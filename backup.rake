@@ -1,13 +1,15 @@
 require 'yaml'
+require 'aws/s3'
 
 # Heroku SQL to S3 Database backup task
 #   by Derek Perez (March 15th, 2010), inspiration from Nick Merwin (Lemur Heavy Industries) 
 #   * takes raw postgresql dumps and uploads them to S3.
 # 
-# Setup:
+# Setup for Rails3 use:
 # 1) replace APP_NAME and BACKUP_BUCKET with your info
 # 2) heroku config:add S3_KEY=YOURKEY S3_SECRET=YOURSECRET
-# 3) add aws-s3 to your .gems
+# 3) add aws-s3 to your Germfile
+# 4) bundle install
 #
 # Usage:
 #    heroku rake backups:backup
